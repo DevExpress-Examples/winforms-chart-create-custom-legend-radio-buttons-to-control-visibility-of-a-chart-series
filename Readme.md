@@ -1,3 +1,8 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [MainForm.cs](./CS/MainForm.cs) (VB: [MainForm.vb](./VB/MainForm.vb))
+<!-- default file list end -->
 # How to create custom legend radio buttons to control visibility of a chart series
 
 
