@@ -48,16 +48,18 @@ namespace CustomCheckboxesInLegendViewAndBehavior {
             using (Graphics graphics = Graphics.FromImage(bitmap)) {
                 graphics.SmoothingMode = SmoothingMode.HighQuality;
                 Color seriesColor = GetSeriesColor(e.Series, chartControl);
-                Pen radioPen = new Pen(seriesColor, LegendRadioWidth);
-                int radioRadius = LegendRadioSide - 3;
-                Rectangle radioRectangle = new Rectangle(1, 1, radioRadius, radioRadius);
-                graphics.DrawEllipse(radioPen, radioRectangle);
+                using (Pen radioPen = new Pen(seriesColor, LegendRadioWidth)) {
+                    int radioRadius = LegendRadioSide - 3;
+                    Rectangle radioRectangle = new Rectangle(1, 1, radioRadius, radioRadius);
+                    graphics.DrawEllipse(radioPen, radioRectangle);
+                }
                 if (e.Series.CheckedInLegend) {
-                    Brush brush = new SolidBrush(seriesColor);
-                    int coord = (LegendRadioSide - LegendRadioInnerPointBoundsSide) / 2;
-                    Rectangle filledEllipseBounds = new Rectangle(coord, coord,
-                          LegendRadioInnerPointBoundsSide, LegendRadioInnerPointBoundsSide);
-                    graphics.FillEllipse(brush, filledEllipseBounds);
+                    using (Brush brush = new SolidBrush(seriesColor)) {
+                        int coord = (LegendRadioSide - LegendRadioInnerPointBoundsSide) / 2;
+                        Rectangle filledEllipseBounds = new Rectangle(coord, coord,
+                              LegendRadioInnerPointBoundsSide, LegendRadioInnerPointBoundsSide);
+                        graphics.FillEllipse(brush, filledEllipseBounds);
+                    }
                 }
             }
             e.DisposeLegendMarkerImage = true;

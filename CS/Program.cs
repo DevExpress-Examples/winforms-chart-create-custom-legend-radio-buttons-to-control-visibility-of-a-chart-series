@@ -8,6 +8,7 @@
 // You can find sample updates and versions for different programming languages here:
 // http://www.devexpress.com/example=E4951
 
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,10 @@ namespace CustomCheckboxesInLegendViewAndBehavior {
         /// </summary>
         [STAThread]
         static void Main() {
+            WindowsFormsSettings.SetDPIAware();
+            WindowsFormsSettings.AllowDpiScale = true;
+            WindowsFormsSettings.AllowAutoScale = DevExpress.Utils.DefaultBoolean.True;
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new mainForm());
