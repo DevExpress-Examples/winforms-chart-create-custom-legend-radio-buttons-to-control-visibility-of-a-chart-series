@@ -1,21 +1,27 @@
-﻿Imports Microsoft.VisualBasic
+' Developer Express Code Central Example:
+' How to create custom legend radio buttons to control visibility of a chart series
+' 
+' This example demonstrates how to show a distribution law (Normal, Uniform or
+' Exponential) applied to series points, depending on the selection state of a
+' custom radio button in the chart legend.
+' 
+' You can find sample updates and versions for different programming languages here:
+' http://www.devexpress.com/example=E4951
 Imports System
-Imports System.Collections.Generic
-Imports System.Linq
 Imports System.Windows.Forms
 
 Namespace CustomCheckboxesInLegendViewAndBehavior
-	Friend NotInheritable Class Program
-		''' <summary>
-		''' The main entry point for the application.
-		''' </summary>
-		Private Sub New()
-		End Sub
-		<STAThread> _
-		Shared Sub Main()
-			Application.EnableVisualStyles()
-			Application.SetCompatibleTextRenderingDefault(False)
-			Application.Run(New mainForm())
-		End Sub
-	End Class
+
+    Friend Module Program
+
+        ''' <summary>
+        ''' The main entry point for the application.
+        ''' </summary>
+        <STAThread>
+        Sub Main()
+            Call Application.EnableVisualStyles()
+            Application.SetCompatibleTextRenderingDefault(False)
+            Call Application.Run(New mainForm())
+        End Sub
+    End Module
 End Namespace
