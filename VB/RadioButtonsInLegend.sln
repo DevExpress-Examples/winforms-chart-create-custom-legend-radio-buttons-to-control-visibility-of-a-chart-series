@@ -6,7 +6,7 @@ Global
 	GlobalSection(SourceCodeControl) = preSolution
 		SccNumberOfProjects = 2
 		SccLocalPath0 = .
-		SccProjectUniqueName1 = RadioButtonsInLegend.csproj
+		SccProjectUniqueName1 = RadioButtonsInLegend.vbproj
 		SccLocalPath1 = .
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
