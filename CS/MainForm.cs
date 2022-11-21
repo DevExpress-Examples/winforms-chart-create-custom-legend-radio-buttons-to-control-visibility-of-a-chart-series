@@ -1,9 +1,8 @@
-﻿
+﻿using DevExpress.Drawing;
+using DevExpress.XtraCharts;
 using System;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Windows.Forms;
-using DevExpress.XtraCharts;
 
 namespace CustomCheckboxesInLegendViewAndBehavior {
     public partial class mainForm : Form {
@@ -14,8 +13,7 @@ namespace CustomCheckboxesInLegendViewAndBehavior {
 
         public mainForm() {
             InitializeComponent();
-            chartControl.BeginInit();
-            {
+            chartControl.BeginInit(); {
                 chartControl.LegendItemChecked += OnLegendItemChecked;
                 chartControl.CustomDrawSeries += OnCustomDrawSeries;
                 chartControl.Legend.UseCheckBoxes = true;
@@ -30,8 +28,7 @@ namespace CustomCheckboxesInLegendViewAndBehavior {
         void OnLegendItemChecked(object sender, LegendItemCheckedEventArgs e) {
             if (initializationFlag == true)
                 return;
-            initializationFlag = true;
-            {
+            initializationFlag = true; {
                 Series checkedSeries = e.CheckedElement as Series;
                 if (checkedSeries == null)
                     throw new Exception("Expected series only");
@@ -44,17 +41,17 @@ namespace CustomCheckboxesInLegendViewAndBehavior {
         }
 
         void OnCustomDrawSeries(object sender, CustomDrawSeriesEventArgs e) {
-            Bitmap bitmap = new Bitmap(LegendRadioSide, LegendRadioSide);
-            using (Graphics graphics = Graphics.FromImage(bitmap)) {
-                graphics.SmoothingMode = SmoothingMode.HighQuality;
+            DXBitmap bitmap = new DXBitmap(LegendRadioSide, LegendRadioSide);
+            using (DXGraphics graphics = DXGraphics.FromImage(bitmap)) {
+                graphics.SmoothingMode = DXSmoothingMode.HighQuality;
                 Color seriesColor = GetSeriesColor(e.Series, chartControl);
-                using (Pen radioPen = new Pen(seriesColor, LegendRadioWidth)) {
+                using (DXPen radioPen = new DXPen(seriesColor, LegendRadioWidth)) {
                     int radioRadius = LegendRadioSide - 3;
                     Rectangle radioRectangle = new Rectangle(1, 1, radioRadius, radioRadius);
                     graphics.DrawEllipse(radioPen, radioRectangle);
                 }
                 if (e.Series.CheckedInLegend) {
-                    using (Brush brush = new SolidBrush(seriesColor)) {
+                    using (DXBrush brush = new DXSolidBrush(seriesColor)) {
                         int coord = (LegendRadioSide - LegendRadioInnerPointBoundsSide) / 2;
                         Rectangle filledEllipseBounds = new Rectangle(coord, coord,
                               LegendRadioInnerPointBoundsSide, LegendRadioInnerPointBoundsSide);
@@ -63,7 +60,7 @@ namespace CustomCheckboxesInLegendViewAndBehavior {
                 }
             }
             e.DisposeLegendMarkerImage = true;
-            e.LegendMarkerImage = bitmap;
+            e.DXLegendMarkerImage = bitmap;
         }
 
         Color GetSeriesColor(Series series, ChartControl chartControl) {
