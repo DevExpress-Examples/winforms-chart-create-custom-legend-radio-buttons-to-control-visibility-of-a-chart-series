@@ -15,17 +15,16 @@ Namespace CustomCheckboxesInLegendViewAndBehavior
         Private initializationFlag As Boolean = False
 
         Public Sub New()
+
             InitializeComponent()
-            'INSTANT VB TODO TASK: Local functions are not converted by Instant VB:
-            '			chartControl.BeginInit()
-            '			{
-            '				chartControl.LegendItemChecked += OnLegendItemChecked;
-            '				chartControl.CustomDrawSeries += OnCustomDrawSeries;
-            '				chartControl.Legend.UseCheckBoxes = True;
-            '				chartControl.Series["Point"].CheckedInLegend = False;
-            '				chartControl.Series["Line"].CheckedInLegend = True;
-            '				chartControl.Series["Area"].CheckedInLegend = False;
-            '			}
+            initializationFlag = True
+            chartControl.BeginInit()
+            chartControl.Legend.UseCheckBoxes = True
+            AddHandler chartControl.CustomDrawSeries, AddressOf OnCustomDrawSeries
+            AddHandler chartControl.LegendItemChecked, AddressOf OnLegendItemChecked
+            chartControl.Series("Point").CheckedInLegend = True
+            chartControl.Series("Line").CheckedInLegend = False
+            chartControl.Series("Area").CheckedInLegend = False
             chartControl.EndInit()
             initializationFlag = False
         End Sub
@@ -34,17 +33,16 @@ Namespace CustomCheckboxesInLegendViewAndBehavior
             If initializationFlag = True Then
                 Return
             End If
-            'INSTANT VB TODO TASK: Local functions are not converted by Instant VB:
-            '			initializationFlag = True
-            '			{
-            '				Series checkedSeries = TryCast(e.CheckedElement, Series);
-            '				if (checkedSeries == Nothing)
-            '					throw New Exception("Expected series only");
-            '				foreach (Series series in chartControl.Series)
-            '					series.CheckedInLegend = False;
-            '				checkedSeries.CheckedInLegend = True;
-            '				chartControl.Titles[0].Text = checkedSeries.Name;
-            '			}
+            initializationFlag = True
+            Dim checkedSeries As Series = TryCast(e.CheckedElement, Series)
+            If checkedSeries Is Nothing Then
+                Throw New Exception("Expected series only")
+            End If
+            For Each series As Series In chartControl.Series
+                series.CheckedInLegend = False
+            Next series
+            checkedSeries.CheckedInLegend = True
+            chartControl.Titles(0).Text = checkedSeries.Name
             initializationFlag = False
         End Sub
 
