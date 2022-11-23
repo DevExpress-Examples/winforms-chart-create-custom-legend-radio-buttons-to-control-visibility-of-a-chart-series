@@ -6,7 +6,7 @@
 
 # Chart for WinForms - How to Create Custom Legend Radio Buttons to Control Visibility of a Chart Series
 
-This example demonstrates how to show chart series (Point, Line or Area), depending on the selection state of a custom radio button in the chart legend. 
+This example demonstrates how to show chart series (Point, Line, or Area) depending on the selection state of a custom radio button in the chart legend. 
 
 ![Custom Legend](image/Chart.png)
 
