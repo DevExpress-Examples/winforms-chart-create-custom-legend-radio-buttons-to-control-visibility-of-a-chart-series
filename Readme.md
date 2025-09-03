@@ -11,7 +11,7 @@ This example demonstrates how to show chart series (Point, Line, or Area) depend
 
 ![Custom Legend](image/Chart.png)
 
-Use the [ChartControl.CustomDrawSeries](https://docs.devexpress.com/WindowsForms/DevExpress.XtraCharts.ChartControl.CustomDrawSeries?v=22.2) event handler to create a custom appearance for radio buttons based on the color of a selected series. Handle the [ChartControl.LegendItemChecked](https://docs.devexpress.com/WindowsForms/DevExpress.XtraCharts.ChartControl.LegendItemChecked) event and use [e.CheckedElement](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraCharts.LegendItemCheckedEventArgs.CheckedElement) and [SeriesBase.CheckedInLegend](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraCharts.SeriesBase.CheckedInLegend) proeprties to show (or hide) the chart series when you switch between radio buttons. 
+Use the [ChartControl.CustomDrawSeries](https://docs.devexpress.com/WindowsForms/DevExpress.XtraCharts.ChartControl.CustomDrawSeries) event handler to create a custom appearance for radio buttons based on the color of a selected series. Handle the [ChartControl.LegendItemChecked](https://docs.devexpress.com/WindowsForms/DevExpress.XtraCharts.ChartControl.LegendItemChecked) event and use [e.CheckedElement](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraCharts.LegendItemCheckedEventArgs.CheckedElement) and [SeriesBase.CheckedInLegend](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraCharts.SeriesBase.CheckedInLegend) proeprties to show (or hide) the chart series when you switch between radio buttons. 
 
 ## Files to Review
 
@@ -19,7 +19,7 @@ Use the [ChartControl.CustomDrawSeries](https://docs.devexpress.com/WindowsForms
 
 ## Documentation
 
-[Legend Items](https://docs.devexpress.com/WindowsForms/115949/controls-and-libraries/chart-control/legends/legend-items?v=22.2&p=netframework)
+[Legend Items](https://docs.devexpress.com/WindowsForms/115949/controls-and-libraries/chart-control/legends/legend-items)
 
 ## More Examples 
 
