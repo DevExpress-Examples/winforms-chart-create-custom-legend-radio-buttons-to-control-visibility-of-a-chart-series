@@ -26,7 +26,7 @@ Use the [ChartControl.CustomDrawSeries](https://docs.devexpress.com/WindowsForms
 [Chart for WinForms - How to Add a Custom Item to a Legend](https://github.com/DevExpress-Examples/winforms-chart-add-a-custom-legend-item)
 
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=winforms-chart-create-custom-legend-radio-buttons-to-control-visibility-of-a-chart-series&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=winforms-chart-create-custom-legend-radio-buttons-to-control-visibility-of-a-chart-series&~~~was_helpful=no)
 
